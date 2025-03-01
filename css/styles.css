@@ -8,7 +8,7 @@ body {
       linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
       var(--dot-color);
     display: flex;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     height: 100vh;
     color: rgb(255, 255, 255);
