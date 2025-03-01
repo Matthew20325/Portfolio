@@ -1,5 +1,5 @@
 body {
-    --dot-bg: black;
+    --dot-bg: rgb(0, 0, 0);
     --dot-color: white;
     --dot-size: 1px;
     --dot-space: 22px;
@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: white;
+    color: rgb(153, 38, 38);
     font-family: Arial, sans-serif;
     text-align: center;
     flex-direction: column;
