@@ -11,8 +11,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: rgb(153, 38, 38);
+    color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
     text-align: center;
     flex-direction: column;
+    transform: scale(1.4); /* Scale everything */
+    transform-origin: top; /* Ensures scaling starts from the top */
   }

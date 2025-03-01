@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link id="stylesheet" rel="stylesheet" href="css/styles.css">
-    <script>
-      function switchStylesheet() {
-        let link = document.getElementById("stylesheet");
-    
-        // Check if the stylesheet failed to load
-        link.onerror = function () {
-          console.warn("Primary stylesheet not found. Switching...");
-          link.href = "/Portfolio/css/styles.css";
-        };
-      }
-    
-      switchStylesheet();
-    </script>
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Scott Style Portfolio</title>
-    <style>
+    <title>Matthew Iglesias</title>
+    <link id="stylesheet" rel="stylesheet" href="css/styles.css">
+    <style>   
         h1 {
             font-size: 3rem;
             font-weight: bold;
             animation: fadeIn 1.5s ease-in-out;
+            padding-top: 400px;
         }
         p {
             font-size: 1.2rem;
@@ -43,22 +30,82 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        #sketch {
-             width: 50%;
-             height: 100%;
-             display: block;
-             margin: 0 auto;
-    }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .section img {
+            width: 40%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .section .text {
+            width: 40%;
+            text-align: left;
+            padding: 20px;
+        }
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <h1>Matthew Iglesias</h1>
     <p>App & Game Developer | Computer Science Major | Content Creator</p>
     <div class="links">
-
         <a href="https://github.com/Matthew20325">GitHub</a>
         <a href="https://twitch.tv/mattthew20325">Twitch</a>
-        <a href="#"></a>
+        <a href="https://www.youtube.com/@matthew20325">YouTube</a>
     </div>
+    
+    <div class="section">
+        <img src="image1.jpg" alt="Project 1">
+        <div class="text">
+            <h2>Project 1</h2>
+            <p>Description of the first project.</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <img src="image2.jpg" alt="Project 2">
+        <div class="text">
+            <h2>Project 2</h2>
+            <p>Description of the second project or experience.</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <img src="image3.jpg" alt="Project 3">
+        <div class="text">
+            <h2>Project 3</h2>
+            <p>Description of the third project or experience.</p>
+        </div>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 </body>
 </html>
