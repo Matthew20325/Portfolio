@@ -11,7 +11,13 @@
             font-size: 3rem;
             font-weight: bold;
             animation: fadeIn 1.5s ease-in-out;
-            padding-top: 400px;
+            padding-top: 0px;
+        }
+        project {
+            font-size: 3rem;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
+            padding-top: 20px;
         }
         p {
             font-size: 1.2rem;
@@ -41,10 +47,14 @@
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
         .section img {
-            width: 40%;
-            max-width: 500px;
+            width: 50%;
+            max-width: 1000px;
             height: auto;
             border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section img:hover {
+            transform: scale(0.95);
         }
         .section .text {
             width: 40%;
@@ -68,25 +78,32 @@
         <a href="https://twitch.tv/mattthew20325">Twitch</a>
         <a href="https://www.youtube.com/@matthew20325">YouTube</a>
     </div>
-    
+    <project>Projects</project>
+
     <div class="section">
-        <img src="image1.png" alt="Project 1" style="width: 200px; height: auto;">
+        <a href="https://github.com/Matthew20325/Fisch-Accurate-Calculator">
+            <img src="image1.png" alt="Project 1">
+        </a>
         <div class="text">
             <h2>Fisch Accurate Calculator</h2>
-            <p>An accurate calculator to predict the price of fish based off their weight in the roblox game Fisch.</p>
+            <p>An accurate calculator to predict the price of fish based off their weight in the Roblox game Fisch.</p>
         </div>
     </div>
     
     <div class="section">
-        <img src="image2.jpg" alt="Project 2">
+        <a href="https://yourlink.com/project2">
+            <img src="image2.jpg" alt="Project 2">
+        </a>
         <div class="text">
             <h2>Fisch Accurate Calculator</h2>
-            <p>An accurate calculator to predict the price of fish based off their weight in the roblox game Fisch.</p>
+            <p>An accurate calculator to predict the price of fish based off their weight in the Roblox game Fisch.</p>
         </div>
     </div>
     
     <div class="section">
-        <img src="image3.jpg" alt="Project 3">
+        <a href="https://yourlink.com/project3">
+            <img src="image3.jpg" alt="Project 3">
+        </a>
         <div class="text">
             <h2>Project 3</h2>
             <p>Description of the third project or experience.</p>
