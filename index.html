@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Iglesias</title>
-    <link id="stylesheet" rel="stylesheet" href="css/styles.css">
     <style>   
         h1 {
             font-size: 3rem;
@@ -68,6 +67,29 @@
             opacity: 1;
             transform: translateY(0);
         }
+        body {
+          --dot-bg: rgb(0, 0, 0);
+           --dot-color: white;
+          --dot-size: 1px;
+           --dot-space: 22px;
+           background:
+             linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+             linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+             var(--dot-color);
+           display: flex;
+           justify-content: top;
+           align-items: center;
+           height: 100vh;
+           color: rgb(255, 255, 255);
+           font-family: Arial, sans-serif;
+            text-align: center;
+           flex-direction: column;
+            transform: scale(1.4); /* Scale everything */
+            transform-origin: top; /* Ensures scaling starts from the top */
+            overflow-x: hidden;
+            width: 100%;
+          }
+
     </style>
 </head>
 <body>
