@@ -3,104 +3,138 @@
 <head>
     <title>Matthew's Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthew Iglesias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>   
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            --dot-bg: rgb(0, 0, 0);
+            --dot-color: white;
+            --dot-size: 1px;
+            --dot-space: 22px;
+            background:
+                linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+                linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+                var(--dot-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
         h1 {
             font-size: 3rem;
             font-weight: bold;
             animation: fadeIn 1.5s ease-in-out;
-            padding-top: 0px;
+            padding-top: 10px;
         }
-        project {
-            font-size: 3rem;
-            font-weight: bold;
-            animation: fadeIn 1.5s ease-in-out;
-            padding-top: 20px;
-        }
-        p {
+
+        .subtitle {
             font-size: 1.2rem;
             margin-top: 10px;
             opacity: 0.8;
         }
+
         .links {
             margin-top: 20px;
         }
+
         .links a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            display: inline-block;
+            padding: 10px;
         }
+
+        .projects-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 40px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         .section {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 100px;
+            padding: 50px 10px;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease-out, transform 1s ease-out;
+            max-width: 100%;
         }
+
         .section img {
-            width: 50%;
-            max-width: 1000px;
+            width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 10px;
             transition: transform 0.3s ease-in-out;
         }
+
         .section img:hover {
             transform: scale(0.95);
         }
+
         .section .text {
-            width: 40%;
-            text-align: left;
+            width: 90%;
+            text-align: center;
             padding: 20px;
         }
-        .section:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+
         .section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        body {
-          --dot-bg: rgb(0, 0, 0);
-           --dot-color: white;
-          --dot-size: 1px;
-           --dot-space: 22px;
-           background:
-             linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-             linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-             var(--dot-color);
-           display: flex;
-           justify-content: top;
-           align-items: center;
-           height: 100vh;
-           color: rgb(255, 255, 255);
-           font-family: Arial, sans-serif;
-            text-align: center;
-           flex-direction: column;
-            transform: scale(1.4); /* Scale everything */
-            transform-origin: top; /* Ensures scaling starts from the top */
-            overflow-x: hidden;
-            width: 100%;
-          }
+
+        @media (min-width: 768px) {
+            .section {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 80px 10px;
+            }
+
+            .section:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .section .text {
+                width: 40%;
+                text-align: left;
+            }
+        }
 
     </style>
 </head>
 <body>
     <h1>Matthew Iglesias</h1>
-    <p>App & Game Developer | Computer Science Major | Content Creator</p>
+    <p class="subtitle">App & Game Developer | Computer Science Major | Content Creator</p>
+
     <div class="links">
         <a href="https://github.com/Matthew20325">GitHub</a>
         <a href="https://twitch.tv/mattthew20325">Twitch</a>
         <a href="https://www.youtube.com/@matthew20325">YouTube</a>
     </div>
-    <project>Projects</project>
+
+    <div class="projects-title">Projects</div>
 
     <div class="section">
         <a href="https://github.com/Matthew20325/Fisch-Accurate-Calculator">
@@ -108,7 +142,7 @@
         </a>
         <div class="text">
             <h2>Fisch Accurate Calculator</h2>
-            <p>An accurate calculator to predict the price of fish based off their weight in the Roblox game Fisch.</p>
+            <p>An accurate calculator to predict the price of fish based on their weight in the Roblox game Fisch.</p>
         </div>
     </div>
     
@@ -117,8 +151,8 @@
             <img src="image2.jpg" alt="Project 2">
         </a>
         <div class="text">
-            <h2>Fisch Accurate Calculator</h2>
-            <p>An accurate calculator to predict the price of fish based off their weight in the Roblox game Fisch.</p>
+            <h2>Project 2</h2>
+            <p>Description of the second project or experience.</p>
         </div>
     </div>
     
